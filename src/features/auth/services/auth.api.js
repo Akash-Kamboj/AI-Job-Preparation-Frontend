@@ -2,10 +2,8 @@ import axios from "axios"
 
 const isDev = window.location.hostname === "localhost"
 const api = axios.create({
-     baseURL: isDev 
-        ? "http://localhost:3000" 
-        : "https://ai-job-preparation-backend.vercel.app",
-                    
+    baseURL: import.meta.env.VITE_API_URL || "http://localhost:3000",
+
     withCredentials: true
 })
 
